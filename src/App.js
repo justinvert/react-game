@@ -18,7 +18,7 @@ class App extends Component {
   };
 
   clickTest = id => {
-    const incorrect = this.state.otherNumbers.find(number => number.id === number.id);
+    const incorrect = this.state.otherNumbers.find(number => number.id === id);
 
   if(this.state.score >= this.state.highScore){
        this.setState({

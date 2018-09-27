@@ -1,5 +1,5 @@
 ## React Memory Game
-**Live Demo**
+**[Live Demo](https://justinvert.github.io/react-game/)**
 
 ### Objectives
 1. The user must be able to click on the numbers presented to them
