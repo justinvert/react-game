@@ -14,6 +14,14 @@ class App extends Component {
     highScore: 0
   };
 
+  clickTest = id => {
+    const numbers = this.state.numbers.filter(number => number.id === number.id);
+    this.setState({ numbers,
+      score: this.state.score+= 1,
+    });
+ 
+shuffle(numbers);
+  };
 
 render() {
   return (
@@ -30,6 +38,7 @@ render() {
           
             id={number.id}
             name={number.name}
+            clickTest={this.clickTest}
             image={number.image}
         />
       ))}
@@ -55,7 +64,6 @@ const shuffle= (array) =>  {
      return array;    
 };
 
-shuffle(numbers);
 
 
 export default App;
