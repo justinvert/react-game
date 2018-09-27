@@ -11,32 +11,47 @@ class App extends Component {
 
   state = {
     numbers: numbers,
+    otherNumbers: numbers,
     score: 0,
     highScore: 0,
+    message: "",
 Test: false
   };
 
   clickTest = id => {
-    const numbers = this.state.numbers.filter(number => number.id === number.id);
-   
+    const incorrect = this.state.otherNumbers.find(number => number.id === number.id);
+    //  this.setState({
+  //   highScore: this.state.score
+  //  })
 
-    if(this.state.Test == true){
-      alert("Test Message")
+  if(this.state.score >= this.state.highScore){
+       this.setState({
+    highScore: this.state.score
+   })
+  }
+
+    if(!incorrect){
+      // alert("Test Message")
       this.setState({ numbers,
         score: 0,
-        highScore: this.state.score,
-        Test: false
+        // highScore: this.state.score,
+        otherNumbers: numbers,
+        message:"Incorrect."
+        // Test: false
       });
       shuffle(numbers);
     }
     
-    else if(this.state.Test == false){
-      // const numbers = this.state.numbers.filter(number => number.id !== number.id);
+    else {
+      const correct = this.state.otherNumbers.filter(number => number.id !== id);
+
+
       this.setState({ numbers,
         score: this.state.score+= 1,
-        highScore: this.state.score,
-        Test: true
-       
+        // highScore: this.state.score,
+        otherNumbers: correct,
+        message:"Correct!"
+      //  Test: true
       });
       shuffle(numbers);
     }
@@ -46,10 +61,13 @@ Test: false
 
 render() {
   return (
+   
     <Page>
   <Navbar>
-          <li id="title" className="list-inline-item">React Game</li>
-          <li id="guess" className="list-inline-item">{this.state.highScore}</li>
+          <li id="title" className="list-inline-item">{this.state.message}</li>
+          &nbsp;
+          <li id="guess" className="list-inline-item">High Score: {this.state.highScore}</li>
+          &nbsp;
           <li id="score" className="list-inline-item">Current Score: {this.state.score}</li>
          </Navbar>
          <div className="container text-center">
