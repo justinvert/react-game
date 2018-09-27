@@ -6,8 +6,9 @@ const Card = props => (
   <div className="card">
   <div className="card-body">
     <h5 className="card-title"> {props.name}</h5>
+  
      <img alt={props.id} src={props.image} />
-     <span onClick={() => props.clickTest(props.id)} className="remove">test</span>
+     <span onClick={() => props.clickTest(props.id)} className="clickTest">test</span>
   </div>
 </div>
 

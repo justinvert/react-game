@@ -8,19 +8,40 @@ import './App.css';
 
 class App extends Component {
 
+
   state = {
     numbers: numbers,
     score: 0,
-    highScore: 0
+    highScore: 0,
+Test: false
   };
 
   clickTest = id => {
     const numbers = this.state.numbers.filter(number => number.id === number.id);
-    this.setState({ numbers,
-      score: this.state.score+= 1,
-    });
- 
-shuffle(numbers);
+   
+
+    if(this.state.Test == true){
+      alert("Test Message")
+      this.setState({ numbers,
+        score: 0,
+        highScore: this.state.score,
+        Test: false
+      });
+      shuffle(numbers);
+    }
+    
+    else if(this.state.Test == false){
+      // const numbers = this.state.numbers.filter(number => number.id !== number.id);
+      this.setState({ numbers,
+        score: this.state.score+= 1,
+        highScore: this.state.score,
+        Test: true
+       
+      });
+      shuffle(numbers);
+    }
+
+
   };
 
 render() {
@@ -28,7 +49,7 @@ render() {
     <Page>
   <Navbar>
           <li id="title" className="list-inline-item">React Game</li>
-          <li id="guess" className="list-inline-item"></li>
+          <li id="guess" className="list-inline-item">{this.state.highScore}</li>
           <li id="score" className="list-inline-item">Current Score: {this.state.score}</li>
          </Navbar>
          <div className="container text-center">
@@ -40,12 +61,14 @@ render() {
             name={number.name}
             clickTest={this.clickTest}
             image={number.image}
+            
         />
       ))}
       </div>
        </div>
      
     </Page>
+    
   );
 }
 }
