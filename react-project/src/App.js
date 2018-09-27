@@ -15,14 +15,10 @@ class App extends Component {
     score: 0,
     highScore: 0,
     message: "",
-Test: false
   };
 
   clickTest = id => {
     const incorrect = this.state.otherNumbers.find(number => number.id === number.id);
-    //  this.setState({
-  //   highScore: this.state.score
-  //  })
 
   if(this.state.score >= this.state.highScore){
        this.setState({
@@ -31,13 +27,10 @@ Test: false
   }
 
     if(!incorrect){
-      // alert("Test Message")
       this.setState({ numbers,
         score: 0,
-        // highScore: this.state.score,
         otherNumbers: numbers,
         message:"Incorrect."
-        // Test: false
       });
       shuffle(numbers);
     }
@@ -45,13 +38,10 @@ Test: false
     else {
       const correct = this.state.otherNumbers.filter(number => number.id !== id);
 
-
       this.setState({ numbers,
         score: this.state.score+= 1,
-        // highScore: this.state.score,
         otherNumbers: correct,
         message:"Correct!"
-      //  Test: true
       });
       shuffle(numbers);
     }
@@ -71,6 +61,8 @@ render() {
           <li id="score" className="list-inline-item">Current Score: {this.state.score}</li>
          </Navbar>
          <div className="container text-center">
+         Objective: Click on the numbers without clicking on the same number more than once.
+         
          <div className="row">
         {this.state.numbers.map(number => (
        <Card cascade

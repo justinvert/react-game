@@ -1,77 +1,65 @@
 [
     {
         "id": 0,
-        "Test": false,
         "name": "zero",
         "image": "images/00.png"
        
     },
     {
         "id": 1,
-        "Test": false,
         "name": "one",
         "image": "images/01.png"
        
     },
     {
       "id": 2,
-      "Test": false,
       "name": "two",
       "image": "images/02.png"
       
     },
     {
         "id": 3,
-        "Test": false,
         "name": "three",
         "image": "images/03.png"
     },
     {
         "id": 4,
-        "Test": false,
         "name": "four",
         "image": "images/04.png"
      
     },
     {
         "id": 5,
-        "Test": false,
         "name": "five",
         "image": "images/05.png"
     },
     {
         "id": 6,
-        "Test": false,
         "name": "six",
         "image": "images/06.png"
     },
     {
         "id": 7,
-        "Test": false,
       "name": "seven",
       "image": "images/07.png"
     },
     {
         "id": 8,
-        "Test": false,
         "name": "eight",
         "image": "images/08.png"
     },
     {
         "id": 9,
-        "Test": false,
       "name": "nine",
       "image": "images/09.png"
     },
     {
         "id": 10,
-        "Test": false,
         "name": "ten",
         "image": "images/010.png"
     },
     {
         "id": 11,
-        "Test": false,
         "name": "numbers",
         "image": "images/1234.png"
        
